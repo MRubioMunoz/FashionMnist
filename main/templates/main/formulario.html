@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title  %} Formulario {% endblock  %}
+
+{% block content %} 
+<div class="container">
+
+    <h1 class="my-4">Red Neuronal FashionMnist</h1>
+
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+          <input type="file" id="imgInp" name="upload" accept="image/*">
+          <br>
+          <br>
+          <button class="btn btn-dark my-4" type="submit">Predecir</button>
+    </form>
+
+
+    {% if solucion %}
+    <div class="solucion">
+      <h2>La imagen que ha subido es{{solucion}}
+      <br>
+    {% endif %}
+  </div>
+    
+{% endblock  %}
